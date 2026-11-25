@@ -16,6 +16,10 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-After execution with flutter run remember to stop gradlew:
+After execution with flutter run --no-pub remember to stop gradlew:
 cd android
 ./gradlew --stop
+and check:
+ps aux --sort=-%mem | head -15
+Also:
+ps aux | grep -E 'gradle|GradleDaemon'
