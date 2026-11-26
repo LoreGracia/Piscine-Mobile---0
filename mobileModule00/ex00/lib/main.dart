@@ -32,59 +32,24 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _decrementCounter() {
-    setState(() {
-      _counter--;
-    });
+  void _consoleLog() {
+    print("Button pressed");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: .center,
           children: [
             const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  // tooltip: 'Increment',
-                  child: const Icon(Icons.add),
-                ),
-                ElevatedButton(
-                  onPressed: _decrementCounter,
-                  // tooltip: 'Increment',
-                  child: const Icon(Icons.remove),
-                ),
-              ],
+            ElevatedButton(
+              onPressed: _consoleLog,
+              child: const Text('Press'), //const Icon(Icons.add),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
