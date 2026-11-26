@@ -32,68 +32,37 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // String str0 = 'This button won\'t write on debug console';
-  // String str1 = 'Hello World';
-  // bool change = false;
-  // void null() {
-  //   setState(() {
-  //     change = !change;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
+    final List<String> numbers = [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '0',
+    ];
+
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: const Text('Calculator')),
       body: Center(
-        child: GridView.count(
-          primary: false,
-          padding: const EdgeInsets.all(20),
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          crossAxisCount: 2,
-          children: [
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('0'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('1'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('2'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('3'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('4'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('5'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('6'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('7'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('8'), //const Icon(Icons.add),
-            ),
-            ElevatedButton(
-              onPressed: null,
-              child: const Text('9'), //const Icon(Icons.add),
-            ),
-          ],
+        child: GridView.builder(
+          itemCount: numbers.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          itemBuilder: (context, index) {
+            return ElevatedButton(
+              onPressed: () {},
+              child: Text(numbers[index]),
+            );
+          },
         ),
       ),
     );
