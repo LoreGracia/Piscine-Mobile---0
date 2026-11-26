@@ -1,0 +1,56 @@
+import 'package:material_ui/material_ui.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: .fromSeed(
+          seedColor: const Color(0xffbb86fc),
+          brightness: Brightness.dark,
+        ),
+      ),
+      home: const MyHomePage(title: 'ex00'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  void _consoleLog() {
+    debugPrint("Button pressed");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: .center,
+          children: [
+            const Text('This button will write on debug console'),
+            ElevatedButton(
+              onPressed: _consoleLog,
+              child: const Text('Press'), //const Icon(Icons.add),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
