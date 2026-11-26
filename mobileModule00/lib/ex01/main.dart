@@ -32,8 +32,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _consoleLog() {
-    print("Button pressed");
+  String str0 = 'This button won\'t write on debug console';
+  String str1 = 'Hello World';
+  bool change = false;
+  void _changeText() {
+    setState(() {
+      change = !change;
+    });
   }
 
   @override
@@ -43,9 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
-            const Text('You have pushed the button this many times:'),
+            Text(change ? str0 : str1),
             ElevatedButton(
-              onPressed: _consoleLog,
+              onPressed: _changeText,
               child: const Text('Press'), //const Icon(Icons.add),
             ),
           ],

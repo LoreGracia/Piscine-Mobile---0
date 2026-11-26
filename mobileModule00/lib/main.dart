@@ -1,5 +1,5 @@
 import 'ex00/main.dart' as ex00;
 
-void main(List<String> args) {
+void main() {
   ex00.main();
 }

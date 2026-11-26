@@ -32,21 +32,66 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _consoleLog() {
-    print("Button pressed");
-  }
+  // String str0 = 'This button won\'t write on debug console';
+  // String str1 = 'Hello World';
+  // bool change = false;
+  // void null() {
+  //   setState(() {
+  //     change = !change;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(centerTitle: true, title: const Text('Calculator')),
       body: Center(
-        child: Column(
-          mainAxisAlignment: .center,
+        child: GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 2,
           children: [
-            const Text('You have pushed the button this many times:'),
             ElevatedButton(
-              onPressed: _consoleLog,
-              child: const Text('Press'), //const Icon(Icons.add),
+              onPressed: null,
+              child: const Text('0'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('1'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('2'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('3'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('4'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('5'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('6'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('7'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('8'), //const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('9'), //const Icon(Icons.add),
             ),
           ],
         ),
